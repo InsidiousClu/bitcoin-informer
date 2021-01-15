@@ -1,0 +1,12 @@
+{
+  "name": "bitwala-coins",
+  "displayName": "bitwala-coins",
+  "expo": {
+    "name": "bitwala-coins",
+    "slug": "bitwala-coins",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
