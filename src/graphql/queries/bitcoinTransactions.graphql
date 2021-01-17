@@ -1,0 +1,28 @@
+query BitcoinTransactions(
+  $network: BitcoinNetwork!
+  $limit: Int!
+  $offset: Int!
+  $from: ISO8601DateTime
+  $till: ISO8601DateTime
+) {
+  bitcoin(network: $network) {
+    transactions(options: { desc: ["index"], limit: $limit, offset: $offset }, date: { since: $from, till: $till }) {
+      date {
+        date(format: "%Y-%m-%d %H:%M:%S")
+      }
+      index
+      inputCount
+      outputCount
+      inputValue
+      outputValue
+      feeValue
+      minedValue
+      txCoinbase
+      txLocktime
+      txSize
+      txVsize
+      txWeight
+      txVersion
+    }
+  }
+}

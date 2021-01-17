@@ -1,0 +1,24 @@
+query BitcoinBlocks(
+  $network: BitcoinNetwork!
+  $limit: Int!
+  $offset: Int!
+  $from: ISO8601DateTime
+  $till: ISO8601DateTime
+) {
+  bitcoin(network: $network) {
+    blocks(options: { desc: "height", limit: $limit, offset: $offset }, date: { since: $from, till: $till }) {
+      timestamp {
+        time(format: "%Y-%m-%d %H:%M:%S")
+      }
+      height
+      blockHash
+      blockSize
+      blockStrippedSize
+      blockVersion
+      blockWeight
+      chainwork
+      difficulty
+      transactionCount
+    }
+  }
+}
